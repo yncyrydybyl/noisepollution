@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 
 
-def noise_level(request):
+def api(request):
     """ Read location(s), return noise level """ 
     return HttpResponse("nice")
