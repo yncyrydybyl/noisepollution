@@ -9,3 +9,9 @@ class NoiseObjects(models.Model):
     objects = models.GeoManager()
     class Meta:
         db_table = 'noise_objects'
+        
+class Measurements(models.Model):
+    osm_id = models.CharField(max_length=256, null=True,blank=True)
+    value = models.FloatField(null=True,blank=True)
+    class Meta:
+        db_table = 'noise_measurements'
