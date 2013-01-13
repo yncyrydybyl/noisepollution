@@ -1,0 +1,4 @@
+noisepollution_noiselevel/_apache/
+noisepollution_noiselevel/settings.py
+noisepollution_noiselevel/settings_custom.py
+*.pyc
