@@ -19,13 +19,13 @@ class NoiseMeasure:
     def get(self):
         """ Get the measurement """
         # Build point from lat lng
-        pnt = GEOSGeometry('srid=4326;POINT(%s %s)')
+        pnt = GEOSGeometry('srid=4326;POINT(%s %s)' % (self._lat, self._lng))
         # Get objects
-        matches = NoiseObjects.objects.filter(geom__intersection=pnt)
+        matches = NoiseObjects.objects.filter(geom__covers=pnt)
         # Get the decibel from the matches
         decibel = 0
         for match in matches:
-            dec = matches["decibel"]
+            dec = match.decibel
             if dec > decibel: decibel = dec
         # Return decibel
         return decibel

@@ -10,6 +10,6 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         csv = FileOutput()
         data = csv.get()
-        f = open(os.path.join(settings.RESOURCES, 'polygons3.csv'), 'w')
+        f = open(os.path.join(settings.RESOURCES, 'polygons6.csv'), 'w')
         f.write(data)
         f.close()
